@@ -17,12 +17,12 @@
 General::General(string name, string body, string username):Post(name,body,username)
 {
     
-    this->getUsername()=name;
-    setUsername(name);
-    this->getBody()=body;
-    setBody(body);
-    this->getTitle()=username;
-    setTitle(username);
+    // this->getUsername()=name;
+    // setUsername(name);
+    // this->getBody()=body;
+    // setBody(body);
+    // this->getTitle()=username;
+    // setTitle(username);
    
 
     for (size_t i = 0; i < 6; i++)
@@ -33,7 +33,7 @@ General::General(string name, string body, string username):Post(name,body,usern
 }
 
 //  /**
-//       Mutator function to add a reaction
+//       Mutator function  f to add a reaction
 //       @param    : A reference to reaction (represented by a value of type Reaction)
 //       @return   : return True if the react to the post is successful or false
 //                   if the reaction provided is not within a valid Reaction value.
@@ -60,7 +60,7 @@ bool General::ReactToPost(Reactions react){
 //    */
 
 // // @post : Prints the reaction to the post in this format (example):  Like : 2 | Dislike : 0 | Laugh : 4 | Wow : 2 | Sad : 1 |  Angry : 5
-void General::getReactions(){
+void General::getReactions() const{
     cout << "Like : " << (reacts[0]);
     cout << " | Dislike : " << (reacts[1]);
     cout << " | Laugh : " << (reacts[2]);

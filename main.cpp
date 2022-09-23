@@ -88,4 +88,22 @@ int main()
 
     //
     poll.displayPost();
+
+    cout<<"\n";
+
+    //Promotional class test
+    Promotional Promo{"anton", "question1", "users","https://www.something.something"};
+    string urls="https://www.something.something";
+    Promo.getLink();
+    Promo.setLink(urls);
+    Promo.displayPost();
+    cout<<"\n";
+    
+
+
+
+
+
+
+
 }

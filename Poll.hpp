@@ -24,14 +24,14 @@ private:
     vector<int> votes;
     // time_t p_time;
 public:
-    Poll(string title, string question, string user, vector<string> options);
+    Poll(const string title, const string question, const string user, vector<string> options);
     bool votePoll(const int &option);
 
     void changePollOption(string &new_poll_option, int &current);
-    void getPollOptions();
+    void getPollOptions() const;
 
-    int getPollVotes(int index); // help
-    void displayPost();
+    int getPollVotes(int index) const; // help
+    void displayPost() const;
 };
 
 #endif

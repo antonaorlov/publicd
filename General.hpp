@@ -39,7 +39,7 @@ private:
 public:
     General(string name, string body, string username);
     bool ReactToPost(Reactions react); //need reference wrong 
-    void getReactions();
+    void getReactions() const;
     void displayPost();
 };
 

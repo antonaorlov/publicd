@@ -1,5 +1,5 @@
-//#include "Promotional.hpp"
-// #include <regex>
+#include "Promotional.hpp"
+#include <regex>
 
 /**
       Parameterized constructor.
@@ -14,15 +14,15 @@
                        It will also generate the current time and store it.
    */
 
-// promotional construction
-// Promotional::Promotional(string name,string body,string user,string link){
-//    setUsername(user);
-//    setTitle(body);
-//    setBody(name);
-//    getTimeStamp();
-//    url=link;
-//    //c_time=time(0);
-// }
+//promotional construction
+Promotional::Promotional(string name,string body,string user,string link):Post(name, body, user){
+   // setUsername(user);
+   // setTitle(body);
+   // setBody(name);
+   //getTimeStamp();
+   url=link;
+   //c_time=time(0);
+}
 
 /**
     Accessor function
@@ -30,9 +30,9 @@
  */
 //    getLink
 
-// string Promotional::getLink(){
-//     return url;
-// }
+string Promotional::getLink() const{
+    return url;
+}
 
 /**
     @param    : A reference to the link that is in the format 'https://www.something.something'
@@ -45,17 +45,15 @@
  */
 //    setLink
 
-// bool Promotional::setLink(){
-//    //https://www.something.something
-//     const regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
-//     if(){
-//         return false;
-//     }
-//     if(regex_match(Promotional::getLink(),pattern)){
-//         return true;
-//     }
-//     return false;
-//  }
+bool Promotional::setLink(const string url){
+  // string urls=(https://www.something.something);
+   regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
+    if(regex_match(url, pattern)){
+        return true;
+    }
+    getLink()="broken link";
+    return false;
+ }
 
 /**
    @post      : displays the entire Promotional post (example):
@@ -66,8 +64,15 @@
                {link}
                \n
 */
-//    displayPost
+   //displayPost
 
-//  string Promotional::DisplayPost(){
-
-//  }
+void Promotional::displayPost() const{
+   cout<<getTitle();
+    cout << " at ";
+    getTimeStamp();
+    cout<<" : ";
+    cout<<getBody()<<endl;;
+    cout<<"\n";
+    cout<<getLink();
+   // cout << asctime(localtime(&this->times
+ }

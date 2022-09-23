@@ -15,13 +15,13 @@
                    the vectors of options and their respective number of votes.
    */
 
-Poll::Poll(string title,string question,string user, vector<string> options):Post(title,question,user){
-    this->getUsername()=user;
-    setUsername(user);
-    this->getBody()=question;
-    setBody(question);
-    this->getTitle()=title;
-    setTitle(title);
+Poll::Poll(const string title, const string question,const string user, vector<string> options):Post(title,question,user){
+    // this->getUsername()=user;
+    // setUsername(user);
+    // this->getBody()=question;
+    // setBody(question);
+    // this->getTitle()=title;
+    // setTitle(title);
     // setUsername(user);
     // setBody(question); //question parameter?
     // setTitle(title);
@@ -99,7 +99,7 @@ Poll::Poll(string title,string question,string user, vector<string> options):Pos
    */
 
 //prints the reaction to the pos
- void Poll::getPollOptions(){
+ void Poll::getPollOptions() const{
     for(int i=0;i<(int)options.size();i++){
         cout<<votes[i]<< " votes for: "<<options[i]<<endl;
     }
@@ -113,7 +113,7 @@ Poll::Poll(string title,string question,string user, vector<string> options):Pos
    */
 
 //returns #number of votes for given option
- int Poll::getPollVotes(int index){
+ int Poll::getPollVotes(int index) const{
        return votes[index];
  } 
 
@@ -130,7 +130,7 @@ Poll::Poll(string title,string question,string user, vector<string> options):Pos
                 \n
    */
 
- void Poll::displayPost(){
+ void Poll::displayPost() const{
     cout<<getTitle();
     cout << " at ";
     getTimeStamp();
